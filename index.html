@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050811">
+  <meta name="description" content="Vampir Köylü: Gölge Meclisi / Shadow Council (com.golgemeclisi) — 6698 Sayılı KVKK Aydınlatma Metni, Privacy Policy, GDPR Notice &amp; Open Source Licenses.">
+  <title>Vampir Köylü: Gölge Meclisi / Shadow Council — Gizlilik Politikası &amp; Privacy Policy</title>
+  <style>
+    :root {
+      --bg-void: #050811;
+      --bg-card: #141E30;
+      --bg-panel: #0F172A;
+      --bg-elevated: #1E293B;
+      --gold-amber: #D97706;
+      --gold-bright: #FCD34D;
+      --gold-title: #FBBF24;
+      --border-dim: #334155;
+      --border-steel: #3B4D75;
+      --text-main: #E2E8F0;
+      --text-strong: #F8FAFC;
+      --text-muted: #94A3B8;
+      --green-badge: #16A34A;
+      --green-text: #86EFAC;
+      --font-pixel: "Courier New", "Lucida Console", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --shadow-pixel: 4px 4px 0 #000000;
+      --shadow-pixel-sm: 3px 3px 0 #000000;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-void);
+      color: var(--text-main);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      background-color: var(--bg-void);
+      background-image:
+        linear-gradient(rgba(252, 211, 77, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(252, 211, 77, 0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      color: var(--text-main);
+    }
+
+    a {
+      color: var(--gold-bright);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--text-strong);
+      outline: 2px solid var(--gold-bright);
+      outline-offset: 2px;
+    }
+
+    code {
+      font-family: var(--font-pixel);
+      font-size: 0.9em;
+      background-color: var(--bg-panel);
+      color: var(--gold-bright);
+      border: 1px solid var(--border-dim);
+      padding: 1px 6px;
+      border-radius: 0;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 16px 56px;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background-color: var(--bg-card);
+      border: 3px solid var(--gold-amber);
+      box-shadow: 0 0 0 2px #000000, var(--shadow-pixel);
+      padding: 24px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .pixel-emblem {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+      background-color: var(--bg-panel);
+      border: 2px solid var(--gold-bright);
+      box-shadow: var(--shadow-pixel-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pixel-emblem svg {
+      width: 48px;
+      height: 48px;
+      display: block;
+    }
+
+    .hero-title-group {
+      flex: 1 1 280px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-pixel);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg-void);
+      background-color: var(--gold-bright);
+      padding: 3px 8px;
+      margin-bottom: 8px;
+      border: 1px solid #000000;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-family: var(--font-pixel);
+      font-size: clamp(1.35rem, 3.2vw, 2rem);
+      line-height: 1.25;
+      letter-spacing: 0.03em;
+      color: var(--gold-title);
+      text-shadow: 2px 2px 0 #000000;
+    }
+
+    .hero-sub {
+      margin: 0;
+      color: var(--text-main);
+      font-size: 0.98rem;
+    }
+
+    .meta-strip {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 2px solid var(--border-dim);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+    }
+
+    .meta-chip {
+      background-color: var(--bg-panel);
+      border: 2px solid var(--border-dim);
+      padding: 8px 12px;
+      font-size: 0.88rem;
+    }
+
+    .meta-chip strong {
+      display: block;
+      font-family: var(--font-pixel);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 2px;
+    }
+
+    /* Language Toggle & Quick Nav */
+    .nav-bar {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-steel);
+      box-shadow: var(--shadow-pixel);
+      padding: 12px;
+      margin-bottom: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .toggle-group,
+    .anchor-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .px-btn {
+      appearance: none;
+      border-radius: 0;
+      font-family: var(--font-pixel);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 9px 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-elevated);
+      color: var(--text-main);
+      border: 2px solid var(--border-steel);
+      box-shadow: var(--shadow-pixel-sm);
+      transition: transform 0.08s ease, background-color 0.12s ease, border-color 0.12s ease;
+    }
+
+    .px-btn:hover,
+    .px-btn:focus-visible {
+      background-color: var(--bg-panel);
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      outline: none;
+    }
+
+    .px-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #000000;
+    }
+
+    .px-btn.is-active {
+      background-color: var(--gold-amber);
+      color: #FFFFFF;
+      border-color: var(--gold-bright);
+    }
+
+    .px-btn-ghost {
+      background-color: var(--bg-panel);
+      color: var(--gold-bright);
+      border-color: var(--gold-amber);
+    }
+
+    /* At-a-Glance Highlights */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-steel);
+      box-shadow: var(--shadow-pixel);
+      padding: 14px 16px;
+    }
+
+    .stat-badge {
+      display: inline-block;
+      font-family: var(--font-pixel);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 7px;
+      margin-bottom: 8px;
+      background-color: var(--bg-panel);
+      color: var(--green-text);
+      border: 1px solid var(--green-badge);
+    }
+
+    .stat-card h2 {
+      margin: 0 0 6px;
+      font-family: var(--font-pixel);
+      font-size: 0.95rem;
+      color: var(--gold-title);
+    }
+
+    .stat-card p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Policy Sections */
+    .policy-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--gold-amber);
+      box-shadow: var(--shadow-pixel);
+      padding: 24px;
+      margin-bottom: 24px;
+      scroll-margin-top: 20px;
+    }
+
+    .policy-card[hidden] {
+      display: none;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+      border-bottom: 2px solid var(--border-dim);
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-family: var(--font-pixel);
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      color: var(--gold-title);
+      text-shadow: 2px 2px 0 #000000;
+    }
+
+    .lang-pill {
+      font-family: var(--font-pixel);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background-color: var(--bg-panel);
+      color: var(--gold-bright);
+      border: 2px solid var(--gold-amber);
+    }
+
+    .info-box {
+      background-color: var(--bg-panel);
+      border: 2px solid var(--border-dim);
+      border-left: 4px solid var(--gold-bright);
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      font-size: 0.92rem;
+    }
+
+    .info-box p {
+      margin: 4px 0;
+    }
+
+    .clause {
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      background-color: var(--bg-panel);
+      border: 2px solid var(--border-dim);
+    }
+
+    .clause:last-child {
+      margin-bottom: 0;
+    }
+
+    .clause h3 {
+      margin: 0 0 8px;
+      font-family: var(--font-pixel);
+      font-size: 1rem;
+      color: var(--gold-bright);
+      letter-spacing: 0.02em;
+    }
+
+    .clause p {
+      margin: 0 0 8px;
+    }
+
+    .clause p:last-child {
+      margin-bottom: 0;
+    }
+
+    .clause ul {
+      margin: 6px 0 0;
+      padding-left: 20px;
+    }
+
+    .clause li {
+      margin-bottom: 6px;
+    }
+
+    .clause li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Licenses Grid */
+    .licenses-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-steel);
+      box-shadow: var(--shadow-pixel);
+      padding: 24px;
+      margin-bottom: 24px;
+      scroll-margin-top: 20px;
+    }
+
+    .license-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .license-item {
+      background-color: var(--bg-panel);
+      border: 2px solid var(--border-dim);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .license-item h3 {
+      margin: 0 0 4px;
+      font-family: var(--font-pixel);
+      font-size: 1rem;
+      color: var(--text-strong);
+    }
+
+    .license-source {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .license-badge {
+      align-self: flex-start;
+      font-family: var(--font-pixel);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      background-color: var(--bg-elevated);
+      color: var(--gold-bright);
+      border: 1px solid var(--gold-amber);
+    }
+
+    .asset-credit {
+      margin-top: 16px;
+      padding: 12px 14px;
+      background-color: var(--bg-panel);
+      border: 2px solid var(--border-dim);
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 18px 14px;
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-dim);
+      box-shadow: var(--shadow-pixel);
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .footer strong {
+      color: var(--gold-title);
+      font-family: var(--font-pixel);
+    }
+
+    .footer p {
+      margin: 4px 0;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 14px 12px 40px;
+      }
+
+      .hero,
+      .policy-card,
+      .licenses-card {
+        padding: 16px;
+      }
+
+      .nav-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .toggle-group,
+      .anchor-group {
+        width: 100%;
+      }
+
+      .px-btn {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+    }
+
+    @media print {
+      body {
+        background: #FFFFFF;
+        color: #111827;
+      }
+
+      .hero,
+      .stat-card,
+      .policy-card,
+      .licenses-card,
+      .clause,
+      .info-box,
+      .license-item,
+      .footer {
+        background: #FFFFFF;
+        color: #111827;
+        box-shadow: none;
+        border-color: #6B7280;
+      }
+
+      h1, h2, h3, .eyebrow, .lang-pill, .license-badge {
+        color: #111827;
+        text-shadow: none;
+      }
+
+      .nav-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div class="hero-top">
+        <div class="pixel-emblem" aria-hidden="true">
+          <svg viewBox="0 0 16 16" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+            <rect width="16" height="16" fill="#0F172A" />
+            <rect x="2" y="2" width="12" height="1" fill="#D97706" />
+            <rect x="2" y="13" width="12" height="1" fill="#D97706" />
+            <rect x="2" y="2" width="1" height="12" fill="#D97706" />
+            <rect x="13" y="2" width="1" height="12" fill="#D97706" />
+            <rect x="5" y="4" width="4" height="1" fill="#FCD34D" />
+            <rect x="4" y="5" width="3" height="1" fill="#FCD34D" />
+            <rect x="4" y="6" width="2" height="4" fill="#FCD34D" />
+            <rect x="4" y="10" width="3" height="1" fill="#FCD34D" />
+            <rect x="5" y="11" width="4" height="1" fill="#FCD34D" />
+            <rect x="10" y="6" width="1" height="1" fill="#F87171" />
+            <rect x="11" y="9" width="1" height="1" fill="#94A3B8" />
+          </svg>
+        </div>
+        <div class="hero-title-group">
+          <span class="eyebrow">com.golgemeclisi • 100% Offline Pass &amp; Play</span>
+          <h1>Vampir Köylü: Gölge Meclisi / Shadow Council</h1>
+          <p class="hero-sub">6698 Sayılı KVKK Aydınlatma Metni • Google Play Privacy Policy &amp; GDPR Notice • Açık Kaynak Lisansları</p>
+        </div>
+      </div>
+
+      <div class="meta-strip">
+        <div class="meta-chip">
+          <strong>Son Güncelleme / Last Updated</strong>
+          17 Kasım 2026 / November 17, 2026
+        </div>
+        <div class="meta-chip">
+          <strong>Paket / Package Org</strong>
+          <code>com.golgemeclisi</code>
+        </div>
+        <div class="meta-chip">
+          <strong>İletişim / Contact</strong>
+          <code>golgemeclisidestek@gmail.com</code>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-bar" aria-label="Dil ve Bölüm Seçimi / Language and Section Navigation">
+      <div class="toggle-group" role="group" aria-label="Dil Filtresi / Language Filter">
+        <button type="button" class="px-btn is-active" data-lang-btn="all" aria-pressed="true">Tümü / Both</button>
+        <button type="button" class="px-btn" data-lang-btn="tr" aria-pressed="false">Türkçe (KVKK)</button>
+        <button type="button" class="px-btn" data-lang-btn="en" aria-pressed="false">English (Privacy &amp; GDPR)</button>
+      </div>
+      <div class="anchor-group">
+        <a class="px-btn px-btn-ghost" href="#tr-kvkk">TR: KVKK</a>
+        <a class="px-btn px-btn-ghost" href="#en-privacy">EN: Privacy</a>
+        <a class="px-btn px-btn-ghost" href="#licenses">Lisanslar / Licenses</a>
+      </div>
+    </nav>
+
+    <section class="summary-grid" aria-label="Gizlilik Özeti / Privacy Highlights">
+      <article class="stat-card">
+        <span class="stat-badge">OFFLINE ONLY</span>
+        <h2>100% Pass &amp; Play</h2>
+        <p>Tek telefonla internet olmadan yüz yüze oynanır. No internet connection or backend server required.</p>
+      </article>
+      <article class="stat-card">
+        <span class="stat-badge">ZERO DATA</span>
+        <h2>0 Kişisel Veri / Zero Data</h2>
+        <p>Ad, e-posta, konum, kamera, mikrofon veya cihaz kimliği toplanmaz. Collects zero personal data.</p>
+      </article>
+      <article class="stat-card">
+        <span class="stat-badge">LOCAL PREFS</span>
+        <h2>Yerel Depolama / Local Only</h2>
+        <p>Takma ad ve ayarlar yalnızca <code>client_storage</code> / <code>SharedPreferences</code> içinde saklanır.</p>
+      </article>
+      <article class="stat-card">
+        <span class="stat-badge">NO ADS / NO SDK</span>
+        <h2>Reklamsız / Zero Trackers</h2>
+        <p>Reklam ağı, analitik SDK veya takip çerezi içermez. Zero ads, zero analytics, zero tracking.</p>
+      </article>
+    </section>
+
+    <!-- TÜRKÇE SECTION -->
+    <section id="tr-kvkk" class="policy-card" lang="tr" data-lang-section="tr" aria-labelledby="heading-tr">
+      <div class="section-header">
+        <h2 id="heading-tr">Gizlilik Politikası ve 6698 Sayılı KVKK Aydınlatma Metni</h2>
+        <span class="lang-pill">TÜRKÇE • KVKK &amp; GOOGLE PLAY</span>
+      </div>
+
+      <div class="info-box">
+        <p><strong>Uygulama Adı:</strong> Vampir Köylü: Gölge Meclisi (Shadow Council)</p>
+        <p><strong>Paket Kimliği (Org):</strong> <code>com.golgemeclisi</code></p>
+        <p><strong>Geliştirici / Veri Sorumlusu:</strong> Gölge Meclisi</p>
+        <p><strong>İletişim E-postası:</strong> <code>golgemeclisidestek@gmail.com</code></p>
+        <p><strong>Son Güncelleme Tarihi:</strong> 17 Kasım 2026</p>
+      </div>
+
+      <article class="clause">
+        <h3>1. Genel Bilgilendirme (Google Play &amp; 6698 Sayılı KVKK)</h3>
+        <p>
+          <strong>Vampir Köylü: Gölge Meclisi</strong>, tek cihaz üzerinden arkadaş grubuyla yüz yüze oynanan (<strong>Pass &amp; Play</strong>),
+          tamamen (<strong>%100</strong>) <strong>çevrimdışı</strong> çalışan bir sosyal çıkarım ve parti oyunudur.
+        </p>
+        <p>
+          Uygulama kullanıcı gizliliğine tam saygı gösterir; kişisel verilerinizi toplamaz, işlemez, profillemez, üçüncü taraflarla paylaşmaz, satmaz ve herhangi bir uzak sunucuya aktarmaz.
+        </p>
+      </article>
+
+      <article class="clause">
+        <h3>2. Toplanan Veriler ve Yalnızca Cihaz İçi Yerel Depolama</h3>
+        <ul>
+          <li>
+            <strong>Sıfır Kişisel Veri Toplama:</strong> Uygulama; ad, soyad, e-posta adresi, telefon numarası, konum bilgisi, kamera, mikrofon, rehber veya reklam/cihaz kimliği gibi hiçbir kişisel veriyi toplamaz ve istemez.
+          </li>
+          <li>
+            <strong>Yerel Tercihler (<code>client_storage</code> / <code>SharedPreferences</code>):</strong> Oyun kurulumunda girdiğiniz <strong>oyuncu takma adları</strong>, <strong>seçili rol dağılımı</strong> ve <strong>oyun ayarları</strong> (dil tercihi, gündüz tartışma sayacı, ölenlerin rolünü gösterme, ses efektleri, Mafya zafer kuralı), yalnızca sonraki el hızlıca tekrar oynayabilmeniz amacıyla kendi cihazınızın yerel depolama alanında (<code>SharedPreferences</code> / <code>client_storage</code>) saklanır.
+          </li>
+          <li>
+            <strong>Kalıcı Silme Hakkı:</strong> Cihazınızda yerel olarak tutulan bu kayıtları dilediğiniz zaman uygulama içindeki <strong>Oyun Ayarları &amp; Modlama → "Kayıtlı İsim &amp; Kadroyu Temizle"</strong> butonuna dokunarak veya uygulamayı cihazınızdan kaldırarak kalıcı olarak silebilirsiniz.
+          </li>
+        </ul>
+      </article>
+
+      <article class="clause">
+        <h3>3. Üçüncü Taraf Hizmetler, Reklam ve Analitik SDK'ları</h3>
+        <ul>
+          <li>Uygulama içerisinde hiçbir <strong>reklam ağı, analitik SDK, çökme izleyici, takip çerezi veya sunucu bağlantısı</strong> bulunmamaktadır.</li>
+          <li>Oyun %100 çevrimdışıdır ve çalışmak için internet erişimine ihtiyaç duymaz.</li>
+        </ul>
+      </article>
+
+      <article class="clause">
+        <h3>4. Çocukların Gizliliği</h3>
+        <p>
+          Uygulama 13 yaş altı çocuklar dahil hiçbir kullanıcıdan kişisel veri toplamadığı, sunucuya veri göndermediği ve reklam/takip aracı barındırmadığı için çocukların gizliliği açısından ek bir veri işleme riski taşımaz. Oyun içeriği kurgusal masa oyunu / sosyal çıkarım teması içerir.
+        </p>
+      </article>
+
+      <article class="clause">
+        <h3>5. 6698 Sayılı KVKK Madde 11 Kapsamındaki Haklarınız ve İletişim</h3>
+        <p>
+          6698 sayılı Kişisel Verilerin Korunması Kanunu'nun (KVKK) 11. maddesi uyarınca veri sorumlusuna başvurarak kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse bilgi talep etme ve silinmesini isteme haklarına sahipsiniz.
+        </p>
+        <p>
+          Uygulama sunucu tarafında hiçbir veri tutmadığından tüm yerel tercihleriniz doğrudan kendi cihazınızın kontrolündedir. Gizlilik politikamız veya KVKK kapsamındaki her türlü soru ve talebiniz için <code>golgemeclisidestek@gmail.com</code> adresinden geliştirici ile iletişime geçebilirsiniz.
+        </p>
+      </article>
+    </section>
+
+    <!-- ENGLISH SECTION -->
+    <section id="en-privacy" class="policy-card" lang="en" data-lang-section="en" aria-labelledby="heading-en">
+      <div class="section-header">
+        <h2 id="heading-en">Privacy Policy &amp; GDPR Notice</h2>
+        <span class="lang-pill">ENGLISH • GOOGLE PLAY &amp; GDPR</span>
+      </div>
+
+      <div class="info-box">
+        <p><strong>Application Name:</strong> Vampir Köylü: Gölge Meclisi / Shadow Council (Shadow Council: Werewolf &amp; Mafia)</p>
+        <p><strong>Package Identifier (Org):</strong> <code>com.golgemeclisi</code></p>
+        <p><strong>Developer / Data Controller:</strong> Gölge Meclisi</p>
+        <p><strong>Contact Email:</strong> <code>golgemeclisidestek@gmail.com</code></p>
+        <p><strong>Last Updated:</strong> November 17, 2026</p>
+      </div>
+
+      <article class="clause">
+        <h3>1. Overview &amp; 100% Offline Pass &amp; Play</h3>
+        <p>
+          <strong>Vampir Köylü: Gölge Meclisi / Shadow Council</strong> is a <strong>100% offline</strong>, single-device <strong>Pass &amp; Play</strong> social-deduction party game designed to be played face-to-face with friends.
+        </p>
+        <p>
+          We respect your privacy completely. The app operates entirely on your device and does not collect, process, store externally, sell, or share any personal data with third parties or remote servers.
+        </p>
+      </article>
+
+      <article class="clause">
+        <h3>2. Zero Personal Data Collection &amp; Local-Only Preferences</h3>
+        <ul>
+          <li>
+            <strong>No Personal Data Collected:</strong> The app does not collect or request your real name, email address, phone number, location, camera, microphone, contacts, or advertising/device identifiers.
+          </li>
+          <li>
+            <strong>Local-Only Storage (<code>client_storage</code> / <code>SharedPreferences</code>):</strong> Player nicknames, selected role rosters, and game preferences (language, day discussion timer, reveal dead players' roles, sound effects, and Mafia win rule) are saved strictly locally on your own device via <code>client_storage</code> / <code>SharedPreferences</code> solely so you can quickly replay future rounds.
+          </li>
+          <li>
+            <strong>Deleting Your Local Data:</strong> You retain full control over these local preferences and may permanently erase them at any time via <strong>Game Settings &amp; Modes → "Clear Saved Names &amp; Roster"</strong> inside the app, or by uninstalling the app from your device.
+          </li>
+        </ul>
+      </article>
+
+      <article class="clause">
+        <h3>3. Zero Ads, Analytics, or Third-Party SDKs</h3>
+        <ul>
+          <li>The app contains <strong>zero advertising networks, zero analytics or telemetry SDKs, zero tracking cookies</strong>, and no external server integrations.</li>
+          <li>No internet connection is required or used during gameplay.</li>
+        </ul>
+      </article>
+
+      <article class="clause">
+        <h3>4. Children's Privacy</h3>
+        <p>
+          Because <strong>Shadow Council</strong> collects zero personal information from any user—including children under 13 or under the applicable age of digital consent—it presents no personal data collection or tracking risk for younger audiences and aligns with COPPA and Google Play Families privacy expectations. All gameplay is fictional tabletop social deduction.
+        </p>
+      </article>
+
+      <article class="clause">
+        <h3>5. GDPR Notice &amp; International Privacy Rights</h3>
+        <p>
+          Under the EU General Data Protection Regulation (<strong>GDPR</strong>), UK GDPR, and similar privacy frameworks, individuals normally have rights to access, rectify, port, restrict, or erase personal data held by a controller.
+        </p>
+        <p>
+          Because this application is strictly offline and holds no server-side records or personal identifiers, no external personal data exists to profile or transfer, and all local game preferences remain exclusively on your own device. For any privacy questions or requests, please contact the developer at <code>golgemeclisidestek@gmail.com</code>.
+        </p>
+      </article>
+    </section>
+
+    <!-- LICENSES SECTION -->
+    <section id="licenses" class="licenses-card" aria-labelledby="heading-licenses">
+      <div class="section-header">
+        <h2 id="heading-licenses">Açık Kaynak &amp; Varlık Lisansları / Open Source &amp; Asset Licenses</h2>
+        <span class="lang-pill">CREDITS &amp; LICENSES</span>
+      </div>
+      <p>
+        <strong>Vampir Köylü: Gölge Meclisi / Shadow Council</strong> (<code>com.golgemeclisi</code>) aşağıdaki açık kaynak teknolojiler ve varlıklar kullanılarak geliştirilmiştir / is built with the following open-source software and licensed assets:
+      </p>
+
+      <div class="license-grid">
+        <article class="license-item">
+          <div>
+            <h3>Kenney Interface Sounds</h3>
+            <p class="license-source">Kenney (1.0) — <a href="https://kenney.nl" target="_blank" rel="noopener noreferrer">kenney.nl</a></p>
+            <p class="license-source">Arayüz ve oyun içi ses efektleri / UI &amp; game sound effects.</p>
+          </div>
+          <span class="license-badge">CC0 1.0 Universal</span>
+        </article>
+
+        <article class="license-item">
+          <div>
+            <h3>Pixelify Sans</h3>
+            <p class="license-source">Google Fonts</p>
+            <p class="license-source">Uygulama içi 16-bit piksel yazı tipi / In-app 16-bit pixel font.</p>
+          </div>
+          <span class="license-badge">SIL OFL 1.1</span>
+        </article>
+
+        <article class="license-item">
+          <div>
+            <h3>Flet</h3>
+            <p class="license-source">Appwrite / Flet Framework</p>
+            <p class="license-source">Çok platformlu uygulama çatısı / Cross-platform UI framework.</p>
+          </div>
+          <span class="license-badge">Apache 2.0</span>
+        </article>
+
+        <article class="license-item">
+          <div>
+            <h3>Python</h3>
+            <p class="license-source">Python Software Foundation</p>
+            <p class="license-source">Oyun motoru ve çalışma zamanı / Core runtime &amp; game engine.</p>
+          </div>
+          <span class="license-badge">PSF License</span>
+        </article>
+      </div>
+
+      <div class="asset-credit">
+        <strong>Oyun Görselleri &amp; İkon / Game Art &amp; Icon:</strong> Vampir Köylü: Gölge Meclisi / Shadow Council Project (<code>com.golgemeclisi</code>).
+        Bu sayfa harici CDN, harici yazı tipi veya takip betiği kullanmaz / This page uses zero external CDNs, fonts, or tracking scripts.
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p><strong>Vampir Köylü: Gölge Meclisi / Shadow Council</strong> • <code>com.golgemeclisi</code></p>
+      <p>İletişim / Contact: <code>golgemeclisidestek@gmail.com</code></p>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll("[data-lang-btn]");
+      var trSection = document.querySelector('[data-lang-section="tr"]');
+      var enSection = document.querySelector('[data-lang-section="en"]');
+
+      function applyFilter(mode) {
+        if (!trSection || !enSection) {
+          return;
+        }
+        if (mode === "tr") {
+          trSection.hidden = false;
+          enSection.hidden = true;
+          document.documentElement.lang = "tr";
+        } else if (mode === "en") {
+          trSection.hidden = true;
+          enSection.hidden = false;
+          document.documentElement.lang = "en";
+        } else {
+          trSection.hidden = false;
+          enSection.hidden = false;
+          document.documentElement.lang = "tr";
+        }
+
+        for (var i = 0; i < buttons.length; i++) {
+          var btn = buttons[i];
+          var active = btn.getAttribute("data-lang-btn") === mode;
+          btn.classList.toggle("is-active", active);
+          btn.setAttribute("aria-pressed", active ? "true" : "false");
+        }
+      }
+
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function () {
+          applyFilter(this.getAttribute("data-lang-btn"));
+        });
+      }
+
+      var anchors = document.querySelectorAll(".anchor-group a");
+      for (var j = 0; j < anchors.length; j++) {
+        anchors[j].addEventListener("click", function () {
+          var targetId = this.getAttribute("href");
+          if (targetId === "#tr-kvkk" && trSection && trSection.hidden) {
+            applyFilter("all");
+          } else if (targetId === "#en-privacy" && enSection && enSection.hidden) {
+            applyFilter("all");
+          }
+        });
+      }
+
+      var params = new URLSearchParams(window.location.search);
+      var requestedLang = params.get("lang");
+      if (requestedLang === "en") {
+        applyFilter("en");
+      } else if (requestedLang === "tr") {
+        applyFilter("tr");
+      }
+    })();
+  </script>
+</body>
+</html>
